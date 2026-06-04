@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Aditya Fian Wirayudha — Personal Portfolio</title>
+  <meta name="description" content="Digital Business Graduate dengan pengalaman di bidang teknologi, data management, dan solusi bisnis. Web Developer, Database Developer, dan IT Enthusiast.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fianwirayudha.com/">
+  <meta property="og:title" content="Aditya Fian Wirayudha — Personal Portfolio">
+  <meta property="og:description" content="Digital Business Graduate dengan pengalaman di bidang teknologi, data management, dan solusi bisnis.">
+  <meta property="og:image" content="/src/assets/profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Aditya Fian Wirayudha — Personal Portfolio">
+  <meta property="twitter:description" content="Digital Business Graduate dengan pengalaman di bidang teknologi, data management, dan solusi bisnis.">
+  <meta property="twitter:image" content="/src/assets/profile.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-primary text-text-primary font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-white">
+
+  <!-- Header Section -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      <!-- Logo / Name -->
+      <a href="#home" class="font-heading font-bold text-xl md:text-2xl text-white tracking-wide hover:text-accent transition-colors duration-300">
+        AFW<span class="text-accent">.</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-accent font-semibold hover:text-accent transition-colors duration-300 text-sm tracking-wide">Home</a>
+        <a href="#about" class="text-text-secondary hover:text-accent transition-colors duration-300 text-sm tracking-wide">About</a>
+        <a href="#skills" class="text-text-secondary hover:text-accent transition-colors duration-300 text-sm tracking-wide">Skills</a>
+        <a href="#experience" class="text-text-secondary hover:text-accent transition-colors duration-300 text-sm tracking-wide">Experience</a>
+        <a href="#portfolio" class="text-text-secondary hover:text-accent transition-colors duration-300 text-sm tracking-wide">Portfolio</a>
+        <a href="#contact" class="text-text-secondary hover:text-accent transition-colors duration-300 text-sm tracking-wide">Contact</a>
+      </nav>
+
+      <!-- CTA / Contact Trigger (Desktop) -->
+      <div class="hidden md:block">
+        <a href="#contact" class="px-6 py-2.5 rounded-full border border-accent/30 text-accent hover:bg-accent hover:text-primary hover:border-transparent transition-all duration-300 text-sm font-semibold tracking-wide">
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-white hover:text-accent transition-colors duration-300 focus:outline-none" aria-label="Toggle menu">
+        <svg id="menu-icon-open" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="menu-icon-close" class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[76px] bg-primary/95 backdrop-blur-lg border-b border-white/5 flex-col py-6 px-8 space-y-4 shadow-xl">
+      <a href="#home" class="text-accent font-semibold text-lg py-2 border-b border-white/5">Home</a>
+      <a href="#about" class="text-text-secondary hover:text-accent text-lg py-2 border-b border-white/5">About</a>
+      <a href="#skills" class="text-text-secondary hover:text-accent text-lg py-2 border-b border-white/5">Skills</a>
+      <a href="#experience" class="text-text-secondary hover:text-accent text-lg py-2 border-b border-white/5">Experience</a>
+      <a href="#portfolio" class="text-text-secondary hover:text-accent text-lg py-2 border-b border-white/5">Portfolio</a>
+      <a href="#contact" class="text-text-secondary hover:text-accent text-lg py-2">Contact</a>
+      <a href="#contact" class="mt-4 w-full py-3 text-center rounded-xl bg-accent text-primary font-bold hover:bg-opacity-90 transition-all">
+        Hubungi Saya
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+      <!-- Left: Copywriting -->
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6 md:space-y-8 order-2 lg:order-1 text-left">
+        <div class="space-y-2">
+          <span class="text-accent text-sm md:text-base font-semibold tracking-wider uppercase inline-block bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20">
+            Digital Business Specialist
+          </span>
+          <h1 class="font-heading font-bold text-4xl sm:text-5xl xl:text-6xl text-white leading-tight">
+            Aditya Fian Wirayudha
+          </h1>
+          <h2 class="font-heading text-xl sm:text-2xl text-accent font-medium mt-3 leading-relaxed">
+            Digital Business Graduate with Experience in Technology, Data Management, and Business Solutions.
+          </h2>
+        </div>
+        <p class="text-text-secondary text-base sm:text-lg max-w-2xl leading-relaxed">
+          Memiliki pengalaman dalam pengembangan website, pengelolaan database, analisis data, administrasi digital, serta implementasi solusi berbasis teknologi yang membantu organisasi dan bisnis bekerja lebih efektif.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#experience" class="px-8 py-4 rounded-xl bg-accent text-primary font-bold shadow-lg shadow-accent/20 hover:bg-opacity-90 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 text-base">
+            View Experience
+          </a>
+          <a href="#contact" class="px-8 py-4 rounded-xl border border-white/10 hover:border-accent hover:text-accent transition-all duration-300 text-base font-semibold">
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Professional Photo -->
+      <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] group">
+          <!-- Backing gold glow -->
+          <div class="absolute inset-0 rounded-3xl bg-accent/20 blur-2xl group-hover:bg-accent/30 transition-all duration-500 transform scale-95"></div>
+          
+          <!-- Image Border frame -->
+          <div class="absolute inset-0 rounded-3xl border border-accent/30 p-2 sm:p-3 transition-transform duration-500 group-hover:scale-[1.02]">
+            <!-- Actual Image Wrapper -->
+            <div class="w-full h-full rounded-2xl overflow-hidden bg-surface relative shadow-2xl">
+              <img id="profile-img-trigger" src="/src/assets/profile.png" alt="Aditya Fian Wirayudha" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 cursor-pointer">
+              <!-- Soft overlay gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+            </div>
+          </div>
+          
+          <!-- Floating mini stats badge -->
+          <div class="absolute -bottom-4 -left-4 bg-surface/90 border border-white/5 px-5 py-3 rounded-2xl backdrop-blur-md flex items-center gap-3 shadow-lg animate-bounce duration-1000">
+            <span class="flex h-3.5 w-3.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+            </span>
+            <span class="text-xs sm:text-sm font-semibold text-white">Available for Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left: Intro text -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="space-y-2">
+          <span class="text-accent font-semibold tracking-wider text-sm uppercase">About Me</span>
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">
+            Menghubungkan Bisnis dan Teknologi
+          </h2>
+        </div>
+        <p class="text-text-secondary text-base sm:text-lg leading-relaxed">
+          Saya adalah lulusan S1 Bisnis Digital Universitas dr. Soebandi dengan predikat <strong class="text-accent font-medium">Cumlaude (IPK 3.73)</strong>.
+        </p>
+        <p class="text-text-secondary text-base sm:text-lg leading-relaxed">
+          Memiliki pengalaman dalam pengembangan website, pengelolaan database, administrasi data, digital marketing, serta implementasi solusi digital yang membantu organisasi dan bisnis bekerja lebih efektif.
+        </p>
+        <p class="text-text-secondary text-base sm:text-lg leading-relaxed">
+          Saya percaya bahwa teknologi harus memberikan manfaat nyata dan mampu membantu menyelesaikan permasalahan secara efisien.
+        </p>
+      </div>
+
+      <!-- Right: Highlight Cards -->
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Card 1 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Academic Cap Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Digital Business</h3>
+            <p class="text-xs text-text-secondary mt-1">Graduate & Specialist</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Medal/Award Ribbon Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v5l-3-1.5L6 20v-5m6 0v5l3-1.5 3 1.5v-5M16 8.5c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Cumlaude Graduate</h3>
+            <p class="text-xs text-text-secondary mt-1">IPK 3.73 / 4.00</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Code Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Web Developer</h3>
+            <p class="text-xs text-text-secondary mt-1">Laravel, PHP, & JS Specialist</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Database Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Database Developer</h3>
+            <p class="text-xs text-text-secondary mt-1">MySQL, Normalization, & Tuning</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Document Text Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Administration & Data</h3>
+            <p class="text-xs text-text-secondary mt-1">Digital Archiving & Reporting</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <!-- Lightbulb Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-white text-base">Business Tech Enthusiast</h3>
+            <p class="text-xs text-text-secondary mt-1">Innovative Solutions & Integrations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Expertise Section -->
+  <section id="skills" class="py-24 bg-surface/20 w-full reveal">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-accent font-semibold tracking-wider text-sm uppercase">Skills & Expertise</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">Bidang Keahlian Utama</h2>
+        <p class="text-text-secondary text-base sm:text-lg">
+          Kombinasi kompetensi bisnis digital, manajemen data, dan pengembangan teknologi untuk mendukung operasional modern.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Skill Cat 1: Tech & Dev -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Technology & Dev</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Membangun website, sistem informasi, dan solusi digital yang membantu proses bisnis menjadi lebih efisien.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Laravel</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">PHP</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">JavaScript</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">HTML</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">CSS</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 2: Data & Analytics -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Data & Analytics</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Mengelola, menganalisis, dan menyajikan data menjadi informasi yang mendukung pengambilan keputusan.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Microsoft Excel</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Google Sheets</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Analysis</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Processing</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Reporting</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Dashboard Reporting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 3: Spreadsheet & Excel -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <!-- Spreadsheet Grid Icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M3 14h18m-9-4v8m-5-8v8m9-8v8M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Spreadsheet & Excel</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Penguasaan formula dan alat spreadsheet untuk mengolah, menganalisis, dan memvalidasi data secara efisien.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">SUM / SUMIF / IF</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">VLOOKUP / XLOOKUP</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">LEFT / RIGHT / MID</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Pivot Table</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Cleaning</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Validation</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Spreadsheet Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 4: Administrative & Office Management -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <!-- Administrative / Folder Clipboard Icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Administrative & Office Management</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Memiliki kemampuan dalam pengelolaan administrasi, pengarsipan dokumen, pengolahan data, serta penyusunan laporan untuk mendukung operasional organisasi dan bisnis.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Administrative Management</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Entry</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Document Management</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Office Administration</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Digital Archiving</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Report Preparation</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Microsoft Office</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Microsoft Excel</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Google Workspace</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data Verification</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Data & Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 5: Business & Strategy -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Business & Strategy</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Memahami kebutuhan bisnis dan menerjemahkannya menjadi solusi yang terukur and bernilai.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Business Analysis</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">CRM</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Business Process</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 6: Digital Marketing -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Digital Marketing</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Memanfaatkan media digital untuk meningkatkan jangkauan dan pertumbuhan bisnis.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Social Media</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Content Planning</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Promotion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 7: Design & Creativity -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Design & Creativity</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Membuat desain visual dan konten digital yang menarik dan profesional.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Canva</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">CapCut</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Adobe Premiere</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Cat 8: Collaboration -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Collaboration</h3>
+            </div>
+            <p class="text-sm text-text-secondary">
+              Mampu bekerja sama dalam tim lintas divisi dan berkomunikasi secara efektif.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Communication</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Teamwork</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Problem Solving</span>
+              <span class="bg-primary px-3 py-1.5 rounded-lg text-xs font-semibold text-accent border border-white/5">Adaptability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full reveal">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Left: Column Heading -->
+      <div class="lg:w-1/3 lg:sticky lg:top-32 space-y-4">
+        <span class="text-accent font-semibold tracking-wider text-sm uppercase">Experience</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">Perjalanan & Kegiatan</h2>
+        <p class="text-text-secondary text-base leading-relaxed">
+          Kontribusi saya dalam kegiatan organisasi mahasiswa, pengabdian masyarakat (KKN), serta program magang administrasi keuangan daerah.
+        </p>
+      </div>
+
+      <!-- Right: Timeline -->
+      <div class="lg:w-2/3 relative border-l border-white/10 ml-4 md:ml-6 space-y-12">
+        <!-- Item 1: Internship -->
+        <div class="relative pl-8 md:pl-10 group">
+          <!-- Dot indicator -->
+          <div class="timeline-dot absolute -left-[9px] top-1.5 w-4.5 h-4.5 rounded-full bg-accent border-4 border-primary transition-all duration-300 group-hover:scale-125"></div>
+          
+          <div class="space-y-3">
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">
+                BAPENDA Kabupaten Jember
+              </h3>
+              <span class="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-xs font-bold text-accent">
+                2024 (Magang)
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-text-secondary">
+              Financial Administration Intern
+            </div>
+            <ul class="text-text-secondary text-sm space-y-2 list-disc list-inside marker:text-accent/60">
+              <li>Mengelola dan memverifikasi data transaksi pajak daerah.</li>
+              <li>Membantu administrasi dan pengarsipan dokumen keuangan.</li>
+              <li>Menyusun laporan menggunakan Microsoft Excel.</li>
+              <li>Mendukung proses pengolahan data dan pelaporan administrasi.</li>
+              <li>Berkoordinasi dengan staf dalam kegiatan administrasi keuangan.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Community Service -->
+        <div class="relative pl-8 md:pl-10 group">
+          <!-- Dot indicator -->
+          <div class="timeline-dot absolute -left-[9px] top-1.5 w-4.5 h-4.5 rounded-full bg-accent border-4 border-primary transition-all duration-300 group-hover:scale-125"></div>
+          
+          <div class="space-y-3">
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">
+                Kuliah Kerja Nyata (KKN)
+              </h3>
+              <span class="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-xs font-bold text-accent">
+                2024 (Pengabdian)
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-text-secondary">
+              Student Volunteer
+            </div>
+            <ul class="text-text-secondary text-sm space-y-2 list-disc list-inside marker:text-accent/60">
+              <li>Berkolaborasi dengan masyarakat dalam program pemberdayaan desa.</li>
+              <li>Membantu pelaksanaan kegiatan administrasi dan edukasi masyarakat.</li>
+              <li>Menyusun dokumentasi dan laporan kegiatan.</li>
+              <li>Mendukung pelaksanaan program kerja yang berorientasi pada pengembangan masyarakat.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: Student Organization -->
+        <div class="relative pl-8 md:pl-10 group">
+          <!-- Dot indicator -->
+          <div class="timeline-dot absolute -left-[9px] top-1.5 w-4.5 h-4.5 rounded-full bg-accent border-4 border-primary transition-all duration-300 group-hover:scale-125"></div>
+          
+          <div class="space-y-3">
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">
+                Himpunan Mahasiswa Bisnis Digital
+              </h3>
+              <span class="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-xs font-bold text-accent">
+                2021 – 2024 (Organisasi)
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-text-secondary">
+              Organization Member
+            </div>
+            <ul class="text-text-secondary text-sm space-y-2 list-disc list-inside marker:text-accent/60">
+              <li>Berpartisipasi dalam berbagai kegiatan organisasi mahasiswa.</li>
+              <li>Mendukung pelaksanaan program kerja dan event kampus.</li>
+              <li>Bekerja sama dalam tim untuk menjalankan kegiatan akademik dan non-akademik.</li>
+              <li>Mengembangkan kemampuan komunikasi, kepemimpinan, dan problem solving.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Freelance Work Section -->
+  <section id="portfolio" class="py-24 bg-surface/20 w-full reveal">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-4">
+        <span class="text-accent font-semibold tracking-wider text-sm uppercase">Latest Freelance Work</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">Karya Terkini</h2>
+        <p class="text-text-secondary text-base">
+          Berbagai proyek website dan sistem informasi yang dikembangkan untuk membantu digitalisasi proses bisnis, administrasi data, serta peningkatan efisiensi operasional organisasi dan usaha.
+        </p>
+      </div>
+
+      <!-- Year Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button data-filter="all" class="filter-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-accent text-primary cursor-pointer shadow-lg shadow-accent/15">Semua</button>
+        <button data-filter="2026" class="filter-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-white/10 hover:border-accent hover:text-accent text-text-secondary cursor-pointer">2026</button>
+        <button data-filter="2025" class="filter-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-white/10 hover:border-accent hover:text-accent text-text-secondary cursor-pointer">2025</button>
+        <button data-filter="2024" class="filter-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-white/10 hover:border-accent hover:text-accent text-text-secondary cursor-pointer">2024</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container">
+         <!-- Project 1: SIMARKO DISNAV Bitung (2026) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2026">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/simarko.png" alt="SIMARKO DISNAV Bitung" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2026</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">SIMARKO DISNAV Bitung</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Database Developer</span> &bull; <span>Web Administrator</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Sistem manajemen data operasional berbasis web yang digunakan untuk mendukung administrasi, monitoring data, dan pengelolaan informasi operasional instansi.
+              </p>
+                       <div class="pt-2 border-t border-white/5 flex items-center gap-2">
+              <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+              <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">MySQL</span>
+              <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">PHP</span>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- Project 2: Premium Wedding Invitation (2026) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2026">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/wedding.png" alt="Premium Wedding Invitation" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2026</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">Premium Wedding Invitation</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Front-End Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Website undangan pernikahan digital premium dengan desain elegan, galeri interaktif, love story timeline, RSVP online, dan integrasi Google Maps.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Tailwind CSS</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">JavaScript</span>
+              </div>
+              <a href="https://weeding-bagus-icha.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: JobTracker (2026) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2026">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/jobtracker.png" alt="JobTracker" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2026</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">JobTracker</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Full Stack Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Platform manajemen pencarian kerja yang memungkinkan pengguna melacak status lamaran, jadwal interview, dan perkembangan proses rekrutmen dalam satu dashboard terpusat.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">MySQL</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Tailwind CSS</span>
+              </div>
+              <a href="https://fwjobseeker.vercel.app/login" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Kasir Toko (2026) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2026">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/kasir_toko.png" alt="Kasir Toko" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2026</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">Kasir Toko</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Web Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Aplikasi kasir berbasis web untuk mengelola transaksi penjualan, stok barang, serta laporan usaha secara lebih efisien.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">MySQL</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Tailwind CSS</span>
+              </div>
+              <a href="https://arok1013.github.io/smartpos-web/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Sistem Kasir Digital UMKM UDS (2025) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2025">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/kantin_uds.png" alt="Sistem Kasir Digital UMKM UDS" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2025</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">Sistem Kasir Digital UMKM UDS</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Full Stack Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Sistem Point of Sale berbasis web yang membantu pengelolaan transaksi, inventaris, laporan penjualan, dan arus kas secara terintegrasi.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">MySQL</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Tailwind CSS</span>
+              </div>
+              <a href="https://arok1013.github.io/kantin-uds/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Sistem Kependudukan Jenggawah (2024) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2024">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/kependudukan.png" alt="Sistem Kependudukan Jenggawah" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2024</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">Sistem Kependudukan Jenggawah</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Full Stack Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Sistem informasi kependudukan yang membantu pengelolaan data warga, administrasi surat-menyurat, dan pelayanan masyarakat secara digital.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">Laravel</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">MySQL</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">PHP</span>
+              </div>
+              <a href="https://arok1013.github.io/kependudukan/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- Project 8: Digital Wedding Invitation (2024) -->
+        <article class="project-card glass-card rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-500" data-year="2024">
+          <div class="h-48 w-full border-b border-white/5 relative overflow-hidden">
+            <img src="/src/assets/wedding_digital.png" alt="Digital Wedding Invitation" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-accent border border-white/5">2024</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">Digital Wedding Invitation</h3>
+              <div class="text-xs text-accent font-semibold flex items-center gap-1.5">
+                <span>Front-End Developer</span>
+              </div>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Website undangan digital modern dengan fitur RSVP online, countdown acara, galeri foto, lokasi acara, dan ucapan tamu.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between gap-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">HTML</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">CSS</span>
+                <span class="text-xs font-medium text-text-secondary bg-primary px-2.5 py-1 rounded">JavaScript</span>
+              </div>
+              <a href="https://arok1013.github.io/weddingalfansab/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all duration-300 shrink-0">
+                <span>Kunjungi</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 md:px-12 max-w-4xl mx-auto w-full reveal">
+    <div class="space-y-12 text-center flex flex-col items-center">
+      <!-- Title & Description -->
+      <div class="space-y-3 max-w-2xl">
+        <span class="text-accent font-semibold tracking-wider text-sm uppercase">Contact</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">Let's Connect</h2>
+        <p class="text-text-secondary text-base leading-relaxed">
+          Terbuka untuk peluang kerja, kolaborasi proyek, maupun diskusi terkait teknologi, data management, dan bisnis digital.
+        </p>
+      </div>
+
+      <!-- Contact Info Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl">
+        <!-- Item Email -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center space-y-4 group">
+          <div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <span class="text-xs text-text-secondary block mb-1">Kirim Email</span>
+            <a href="mailto:fianwirarb@gmail.com" class="text-sm font-semibold text-white hover:text-accent transition-colors duration-300">
+              fianwirarb@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Item Phone -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center space-y-4 group">
+          <div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <div>
+            <span class="text-xs text-text-secondary block mb-1">Telepon / WhatsApp</span>
+            <a href="https://wa.me/6285117315388" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-accent transition-colors duration-300">
+              0851-1731-5388
+            </a>
+          </div>
+        </div>
+
+        <!-- Item Location -->
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center space-y-4 group">
+          <div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <span class="text-xs text-text-secondary block mb-1">Lokasi</span>
+            <span class="text-sm font-semibold text-white">Jember, Jawa Timur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex gap-4 pt-4">
+        <!-- GitHub -->
+        <a href="https://github.com/arok1013" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-surface/50 border border-white/5 flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-surface transition-all duration-300" aria-label="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/aditya-fian-wirayudha-b10223247" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-surface/50 border border-white/5 flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-surface transition-all duration-300" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="mt-auto py-12 border-t border-white/5 bg-primary">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left space-y-2">
+        <span class="font-heading font-bold text-lg text-white">AFW<span class="text-accent">.</span></span>
+        <p class="text-xs text-text-secondary">
+          &copy; 2026 Aditya Fian Wirayudha. All Rights Reserved.
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="#home" class="text-text-secondary hover:text-accent transition-colors duration-300">Home</a>
+        <a href="#about" class="text-text-secondary hover:text-accent transition-colors duration-300">About</a>
+        <a href="#skills" class="text-text-secondary hover:text-accent transition-colors duration-300">Skills</a>
+        <a href="#experience" class="text-text-secondary hover:text-accent transition-colors duration-300">Experience</a>
+        <a href="#portfolio" class="text-text-secondary hover:text-accent transition-colors duration-300">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="image-modal" class="fixed inset-0 bg-primary/95 backdrop-blur-md z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+    <!-- Close button -->
+    <button id="modal-close" class="absolute top-6 right-6 text-text-secondary hover:text-accent transition-colors duration-300 focus:outline-none cursor-pointer" aria-label="Tutup gambar">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <!-- Modal content / Image container -->
+    <div class="relative max-w-4xl max-h-[85vh] mx-4 overflow-hidden rounded-2xl border border-white/10 shadow-2xl transform scale-95 transition-transform duration-300">
+      <img src="/src/assets/profile.png" alt="Aditya Fian Wirayudha Full" class="max-h-[85vh] max-w-full object-contain">
+    </div>
+  </div>
+
+</body>
+</html>
