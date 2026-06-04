@@ -320,7 +320,7 @@ Role:
 Organization Member
 
 Year:
-2021 – 2024
+Jan 2022 – Des 2024
 
 Responsibilities:
 
