@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fianwirayudha.com/sitemap.xml
+Sitemap: https://www.fianwr.my.id/sitemap.xml
