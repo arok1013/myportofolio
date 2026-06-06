@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
 
+# Social Media Crawlers - Allow OG Image
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
 Sitemap: https://fianwr.my.id/sitemap.xml
