@@ -81,3 +81,127 @@
 .project-card {
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* 3D Parallax Card Tilt Effects */
+.tilt-wrapper {
+  perspective: 1500px;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.tilt-child-3d {
+  transform: translateZ(50px);
+}
+
+.tilt-child-3d-deep {
+  transform: translateZ(90px);
+}
+
+.tilt-child-3d-back {
+  transform: translateZ(-30px);
+}
+
+/* Concentric Rotating Rings */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.spin-slow {
+  animation: spin-slow 25s linear infinite;
+  transform-origin: center;
+}
+
+.spin-reverse-slow {
+  animation: spin-reverse-slow 35s linear infinite;
+  transform-origin: center;
+}
+
+/* Floating Widgets Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1.5deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 3.5s ease-in-out infinite;
+}
+
+/* Background Glowing Blobs Animation */
+@keyframes glow-shift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.15);
+    opacity: 0.25;
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.9);
+    opacity: 0.2;
+  }
+}
+
+.animate-glow-shift-1 {
+  animation: glow-shift 12s ease-in-out infinite;
+}
+
+.animate-glow-shift-2 {
+  animation: glow-shift 15s ease-in-out infinite alternate;
+}
+
+/* Card Shimmer Sweep */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.shimmer-effect:hover::after {
+  left: 150%;
+}
+

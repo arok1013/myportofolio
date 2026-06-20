@@ -183,4 +183,73 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal();
     }
   });
+
+  // --- 3D Parallax Card Tilt Effect ---
+  const interactiveArea = document.getElementById('hero-interactive-area');
+  const tiltCard = document.getElementById('hero-tilt-card');
+  
+  if (interactiveArea && tiltCard) {
+    const floatBadges = tiltCard.querySelectorAll('.absolute');
+    const bgRings = interactiveArea.querySelectorAll('.ring-wrapper-1, .ring-wrapper-2');
+    const glowBlobs = interactiveArea.querySelectorAll('.animate-glow-shift-1, .animate-glow-shift-2');
+
+    interactiveArea.addEventListener('mousemove', (e) => {
+      // Only run 3D effect on wider screens for premium desktop experience
+      if (window.innerWidth < 1024) return;
+
+      const rect = interactiveArea.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width * 2 - 1; // -1 to 1
+      const y = (e.clientY - rect.top) / rect.height * 2 - 1; // -1 to 1
+
+      // Tilt angles
+      const maxTilt = 10;
+      const tiltX = -y * maxTilt;
+      const tiltY = x * maxTilt;
+
+      // Card Tilt
+      tiltCard.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      // Badges translation
+      floatBadges.forEach((badge) => {
+        let factor = 12;
+        if (badge.classList.contains('tilt-child-3d-deep')) {
+          factor = 20;
+        }
+        const badgeX = x * factor;
+        const badgeY = y * factor;
+        badge.style.transform = `translateX(${badgeX}px) translateY(${badgeY}px)`;
+      });
+
+      // Rings translation (center offsets preserved)
+      bgRings.forEach((ring) => {
+        const ringX = -x * 15;
+        const ringY = -y * 15;
+        ring.style.transform = `translate(calc(-50% + ${ringX}px), calc(-50% + ${ringY}px))`;
+      });
+
+      // Glow blobs translation
+      glowBlobs.forEach((blob) => {
+        const blobX = -x * 25;
+        const blobY = -y * 25;
+        blob.style.transform = `translate(${blobX}px, ${blobY}px)`;
+      });
+    });
+
+    interactiveArea.addEventListener('mouseleave', () => {
+      // Reset smoothly
+      tiltCard.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      
+      floatBadges.forEach((badge) => {
+        badge.style.transform = 'translateX(0px) translateY(0px)';
+      });
+
+      bgRings.forEach((ring) => {
+        ring.style.transform = 'translate(-50%, -50%)';
+      });
+
+      glowBlobs.forEach((blob) => {
+        blob.style.transform = 'translate(0px, 0px)';
+      });
+    });
+  }
 });
