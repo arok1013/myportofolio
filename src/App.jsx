@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 import CustomCursor from "./components/CustomCursor.jsx";
 import Preloader from "./components/Preloader.jsx";
 import gsap from "gsap";
