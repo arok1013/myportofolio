@@ -55,42 +55,78 @@ function createEarthHemisphere(texture) {
 
 function createRocket() {
   const rocket = new THREE.Group();
-  const bodyMaterial = new THREE.MeshPhysicalMaterial({ color: 0xf2eee2, metalness: 0.18, roughness: 0.28, clearcoat: 0.72 });
-  const goldMaterial = new THREE.MeshStandardMaterial({ color: GOLD, metalness: 0.58, roughness: 0.26, emissive: 0x593a15, emissiveIntensity: 0.24 });
-  const darkMaterial = new THREE.MeshStandardMaterial({ color: 0x26413a, metalness: 0.42, roughness: 0.28 });
-  rocket.add(new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.11, 0.34, 24), bodyMaterial));
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.11, 0.22, 24), goldMaterial);
-  nose.position.y = 0.27;
+  const bodyMaterial = new THREE.MeshPhysicalMaterial({ color: 0xe9e8e2, metalness: 0.24, roughness: 0.24, clearcoat: 0.9, clearcoatRoughness: 0.18 });
+  const ceramicMaterial = new THREE.MeshPhysicalMaterial({ color: 0xf5f2e9, metalness: 0.08, roughness: 0.2, clearcoat: 1 });
+  const titaniumMaterial = new THREE.MeshStandardMaterial({ color: 0x53615f, metalness: 0.82, roughness: 0.24 });
+  const accentMaterial = new THREE.MeshStandardMaterial({ color: GOLD, metalness: 0.72, roughness: 0.22 });
+  const windowMaterial = new THREE.MeshPhysicalMaterial({ color: 0x102b39, metalness: 0.58, roughness: 0.12, clearcoat: 1, emissive: 0x07141b, emissiveIntensity: 0.35 });
+
+  // A long, tapered launcher fuselage with a pointed fairing and separated stages.
+  const fuselage = new THREE.Mesh(new THREE.CylinderGeometry(0.072, 0.088, 0.48, 32, 1), bodyMaterial);
+  fuselage.position.y = -0.015;
+  rocket.add(fuselage);
+  const noseProfile = [
+    new THREE.Vector2(0.078, 0), new THREE.Vector2(0.071, 0.045),
+    new THREE.Vector2(0.058, 0.11), new THREE.Vector2(0.038, 0.17),
+    new THREE.Vector2(0.016, 0.225), new THREE.Vector2(0, 0.255),
+  ];
+  const nose = new THREE.Mesh(new THREE.LatheGeometry(noseProfile, 32), ceramicMaterial);
+  nose.position.y = 0.225;
   rocket.add(nose);
-  const window = new THREE.Mesh(new THREE.SphereGeometry(0.045, 20, 16), darkMaterial);
-  window.position.set(0, 0.06, 0.102);
-  window.scale.set(1, 1, 0.48);
-  rocket.add(window);
-  const windowRim = new THREE.Mesh(new THREE.TorusGeometry(0.047, 0.008, 8, 24), goldMaterial);
-  windowRim.position.set(0, 0.06, 0.105);
-  rocket.add(windowRim);
-  const band = new THREE.Mesh(new THREE.TorusGeometry(0.086, 0.012, 8, 24), goldMaterial);
-  band.rotation.x = Math.PI / 2;
-  band.position.y = -0.08;
-  rocket.add(band);
+
+  // Stage seams, service bands, and a small glazed crew/camera port.
+  const ring = (radius, tube, y, material) => {
+    const mesh = new THREE.Mesh(new THREE.TorusGeometry(radius, tube, 10, 32), material);
+    mesh.rotation.x = Math.PI / 2;
+    mesh.position.y = y;
+    rocket.add(mesh);
+  };
+  ring(0.075, 0.009, 0.165, titaniumMaterial);
+  ring(0.087, 0.008, -0.105, accentMaterial);
+  ring(0.088, 0.007, -0.235, titaniumMaterial);
+  const servicePanel = new THREE.Mesh(new THREE.CylinderGeometry(0.089, 0.089, 0.105, 32, 1, true), titaniumMaterial);
+  servicePanel.position.y = 0.105;
+  rocket.add(servicePanel);
+  const portRim = new THREE.Mesh(new THREE.TorusGeometry(0.043, 0.009, 12, 32), titaniumMaterial);
+  portRim.position.set(0, 0.035, 0.079);
+  rocket.add(portRim);
+  const port = new THREE.Mesh(new THREE.SphereGeometry(0.034, 24, 18), windowMaterial);
+  port.position.set(0, 0.035, 0.082);
+  port.scale.z = 0.32;
+  rocket.add(port);
+
+  // Four thin swept fins provide a recognizably aerodynamic rocket silhouette.
   const finShape = new THREE.Shape();
-  finShape.moveTo(0, -0.04); finShape.lineTo(0.13, -0.18); finShape.lineTo(0.045, 0.015); finShape.closePath();
-  const finGeometry = new THREE.ShapeGeometry(finShape);
-  for (let i = 0; i < 3; i += 1) {
-    const fin = new THREE.Mesh(finGeometry, goldMaterial);
-    fin.position.set(i === 1 ? 0 : (i === 0 ? -0.07 : 0.07), -0.08, i === 1 ? -0.095 : 0.045);
-    fin.rotation.y = i * (Math.PI * 2 / 3);
+  finShape.moveTo(0.068, -0.13);
+  finShape.lineTo(0.155, -0.31);
+  finShape.lineTo(0.05, -0.255);
+  finShape.lineTo(0.05, -0.13);
+  finShape.closePath();
+  const finGeometry = new THREE.ShapeGeometry(finShape, 8);
+  for (let i = 0; i < 4; i += 1) {
+    const fin = new THREE.Mesh(finGeometry, titaniumMaterial);
+    fin.rotation.y = (i * Math.PI) / 2;
     rocket.add(fin);
   }
-  const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.07, 0.1, 16), darkMaterial);
-  nozzle.position.y = -0.21;
+
+  // Bell nozzle with nested exhaust glow, animated along the orbit.
+  const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.052, 0.096, 0.13, 32, 1, true), titaniumMaterial);
+  nozzle.position.y = -0.315;
   rocket.add(nozzle);
-  const flameMaterial = new THREE.MeshBasicMaterial({ color: 0xffa45d, transparent: true, opacity: 0.85, depthWrite: false });
-  const flame = new THREE.Mesh(new THREE.ConeGeometry(0.055, 0.2, 16), flameMaterial);
-  flame.position.y = -0.34;
-  flame.rotation.z = Math.PI;
-  rocket.add(flame);
-  return { group: rocket, flame };
+  const nozzleInterior = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.07, 0.035, 24), windowMaterial);
+  nozzleInterior.position.y = -0.376;
+  rocket.add(nozzleInterior);
+  const exhaust = new THREE.Group();
+  const outerFlame = new THREE.Mesh(new THREE.ConeGeometry(0.075, 0.33, 24), new THREE.MeshBasicMaterial({ color: 0xff8a43, transparent: true, opacity: 0.72, depthWrite: false }));
+  outerFlame.position.y = -0.54;
+  outerFlame.rotation.z = Math.PI;
+  const innerFlame = new THREE.Mesh(new THREE.ConeGeometry(0.039, 0.22, 20), new THREE.MeshBasicMaterial({ color: 0xffd59a, transparent: true, opacity: 0.9, depthWrite: false }));
+  innerFlame.position.y = -0.49;
+  innerFlame.rotation.z = Math.PI;
+  exhaust.add(outerFlame, innerFlame);
+  rocket.add(exhaust);
+  rocket.scale.setScalar(1.25);
+  return { group: rocket, flame: exhaust, flameMaterials: [outerFlame.material, innerFlame.material] };
 }
 
 function createGreenScreenVideo(video) {
@@ -246,7 +282,7 @@ export default function HeroCanvas({ onReady }) {
     });
     const orbitMaterial = new THREE.LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.25, depthWrite: false });
     orbitPlane.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(orbitPoints), orbitMaterial));
-    const { group: rocket, flame } = createRocket();
+    const { group: rocket, flame, flameMaterials } = createRocket();
     const initialOrbitAngle = Math.PI / 2;
     rocket.position.set(Math.cos(initialOrbitAngle) * orbitRadiusX, Math.sin(initialOrbitAngle) * orbitRadiusY, 0);
     rocket.rotation.z = Math.atan2(orbitRadiusY * Math.cos(initialOrbitAngle), -orbitRadiusX * Math.sin(initialOrbitAngle)) - Math.PI / 2;
@@ -309,7 +345,8 @@ export default function HeroCanvas({ onReady }) {
         rocket.position.set(rocketX, rocketY, 0);
         rocket.rotation.z = Math.atan2(orbitRadiusY * Math.cos(orbitAngle), -orbitRadiusX * Math.sin(orbitAngle)) - Math.PI / 2;
         flame.scale.setScalar(0.82 + (Math.sin(t * 12) + 1) * 0.2);
-        flame.material.opacity = 0.66 + (Math.sin(t * 12) + 1) * 0.14;
+        flameMaterials[0].opacity = 0.58 + (Math.sin(t * 12) + 1) * 0.1;
+        flameMaterials[1].opacity = 0.78 + (Math.sin(t * 12) + 1) * 0.08;
       }
       characterTexture.update(characterVideo.currentTime);
       renderer.render(scene, camera);
