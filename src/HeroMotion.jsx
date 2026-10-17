@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import SpotlightCard from "./SpotlightCard.jsx";
+import HeroCanvas from "./HeroCanvas.jsx";
 
 const chips = [
   { className: "scene-chip--business", label: "01 / STRATEGY", title: "Advertiser", x: -158, y: -12, z: 90, rotateY: 12, rotateX: -4, delay: 0.15 },
@@ -56,6 +57,7 @@ export default function HeroMotion() {
 
   return (
     <div className="hero-motion-scene" onPointerMove={handlePointerMove} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
+      <HeroCanvas />
       <div className="scene-orbit scene-orbit--outer">
         <motion.div className="scene-orbit__rotor" animate={reduceMotion ? { rotate: 0 } : { rotate: [0, 360] }} transition={{ duration: 38, repeat: Infinity, ease: "linear" }} />
       </div>
